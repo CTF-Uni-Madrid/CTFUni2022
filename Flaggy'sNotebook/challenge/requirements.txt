@@ -1,0 +1,7 @@
+requests
+flask
+svglib==0.9.3
+reportlab
+pillow
+flask-login
+werkzeug

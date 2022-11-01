@@ -1,0 +1,320 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  background: #72c0c3;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  
+}
+
+#flag {
+  border-style: solid; 
+  border-width: 2px; 
+  padding: 4px; 
+  border-color:#5badb0;
+  font-size: 1.4rem;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+.container .title {
+  font-family: "Fredoka One", cursive;
+  font-size: 3rem;
+  color: white;
+  text-decoration: underline;
+}
+.container .money-container {
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  padding-left: 6%;
+  
+}
+.container .money-container .changes {
+  position: absolute;
+  display: inline-flex;
+  top: 1rem;
+  font-weight: bold;
+}
+.container .money-container .changes .change {
+  color: #044600;
+  padding-left: 0.5rem;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: slideinLeft;
+          animation-name: slideinLeft;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.container .money-container .changes .change.negative {
+  color: #860000;
+}
+.container .money-container .changes .change:nth-child(1) {
+  opacity: 0.85;
+}
+.container .money-container .changes .change:nth-child(2) {
+  opacity: 0.7;
+}
+.container .money-container .changes .change:nth-child(3) {
+  opacity: 0.55;
+}
+.container .money-container .changes .change:nth-child(4) {
+  opacity: 0.4;
+}
+.container .money-container .changes .change:nth-child(5) {
+  opacity: 0.25;
+}
+.container .money-container .changes .change:nth-child(6) {
+  opacity: 0.1;
+}
+.container .money-container .changes .change:nth-child(7) {
+  opacity: -0.05;
+}
+.container .money-container .changes .change:nth-child(8) {
+  opacity: -0.2;
+}
+.container .money-container #money {
+  font-size: 2rem;
+  display: inline;
+  margin-left: -8rem;
+  font-weight: bold;
+}
+.container .money-container #money:before {
+  content: "💰 ";
+}
+
+
+.container .play-area {
+  position: relative;
+  display: flex;
+  background-image: linear-gradient(45deg, #edfaf9 18.75%, #b3d5eb 18.75%, #b3d5eb 50%, #edfaf9 50%, #edfaf9 68.75%, #b3d5eb 68.75%, #b3d5eb 100%);
+  background-size: 56.57px 56.57px;
+  min-height: 12.5rem;
+  border: solid #1e1e1e 5px;
+}
+.container .play-area .reel-container {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 12.5rem;
+  overflow: hidden;
+  align-items: center;
+  width: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.container .play-area .reel-container:first-child {
+  border-right: solid #1e1e1e 3px;
+}
+.container .play-area .reel-container:last-child {
+  border-left: solid #1e1e1e 3px;
+}
+.container .play-area .reel-container .reel-item {
+  font-size: 3rem;
+  -webkit-animation-duration: 0.1s;
+          animation-duration: 0.1s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+}
+.container .play-area .reel-container .reel-item.deactivate {
+  -webkit-animation-duration: 0.1s;
+          animation-duration: 0.1s;
+  -webkit-animation-name: slideOut;
+          animation-name: slideOut;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.container .play-area .reel-container .reel-item.win {
+  -webkit-animation: winFlashReels 1s infinite;
+          animation: winFlashReels 1s infinite;
+  border-radius: 50%;
+}
+.container .play-area:before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  top: calc(50% - 8px);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #1e1e1e;
+}
+.container .play-area:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  right: 0;
+  top: calc(50% - 8px);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 15px solid #1e1e1e;
+}
+.container .info {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+.container .info .instructions {
+  color: white;
+  margin-bottom: 1rem;
+  width: 500px;
+  text-align: center;
+  font-family: "Fredoka One", cursive;
+}
+.container .info .prize-table {
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  border-color: #5badb0;
+  border-style: solid;
+  border-width: 2px;
+  padding: 16px;
+  margin-top: 0;
+}
+
+.container .info .prizeinfo {
+  color: white;
+  width: 500px;
+  text-align: center;
+  font-family: "Fredoka One";
+  margin-bottom: 0%;
+  padding-bottom: 0;
+}
+
+.container .info .prize-table .doubles {
+  padding-right: 2rem;
+}
+.container .info .prize-table .prize-item {
+  opacity: 0.4;
+  margin-bottom: 0.2rem;
+}
+.container .info .prize-table .prize-item.active {
+  opacity: 1;
+  -webkit-animation: winFlashPrizeTable 1s infinite;
+          animation: winFlashPrizeTable 1s infinite;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    font-size: 0.1rem;
+    opacity: 0;
+  }
+  to {
+    font-size: 3rem;
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  from {
+    font-size: 0.1rem;
+    opacity: 0;
+  }
+  to {
+    font-size: 3rem;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideOut {
+  to {
+    height: 0;
+    font-size: 0.1rem;
+    opacity: 0;
+  }
+  from {
+    height: 3rem;
+    font-size: 3rem;
+    opacity: 1;
+  }
+}
+@keyframes slideOut {
+  to {
+    height: 0;
+    font-size: 0.1rem;
+    opacity: 0;
+  }
+  from {
+    height: 3rem;
+    font-size: 3rem;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes winFlashReels {
+  0% {
+    background-color: rgba(240, 240, 240, 0.2);
+  }
+  50% {
+    background-color: #14c814;
+  }
+  100% {
+    background-color: rgba(240, 240, 240, 0.2);
+  }
+}
+@keyframes winFlashReels {
+  0% {
+    background-color: rgba(240, 240, 240, 0.2);
+  }
+  50% {
+    background-color: #14c814;
+  }
+  100% {
+    background-color: rgba(240, 240, 240, 0.2);
+  }
+}
+@-webkit-keyframes winFlashPrizeTable {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@keyframes winFlashPrizeTable {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@-webkit-keyframes slideinLeft {
+  to {
+    font-size: 1rem;
+  }
+  from {
+    font-size: 0rem;
+  }
+}
+@keyframes slideinLeft {
+  to {
+    font-size: 1rem;
+  }
+  from {
+    font-size: 0rem;
+  }
+}

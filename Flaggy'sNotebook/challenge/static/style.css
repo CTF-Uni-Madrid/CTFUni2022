@@ -1,0 +1,39 @@
+.link-grey { color: #aaa; } 
+.link-grey:hover { color: #00913b; }
+.notebtn {
+    width: 100%;
+}
+
+
+.navbar {
+    background-color: #120c25 !important;
+}
+
+.btn{
+    background-color: #4e37a5 !important;
+    border-color: #4e37a5 !important;
+}
+
+.btn:focus,.btn:active {
+    outline-color: #4e37a5 !important;
+    box-shadow: 1px 1px #191234 !important;
+ }
+
+ .card-body{
+    background-color: #e7e1ff !important;
+ }
+
+ .input-group{
+    width: 40% !important;
+ }
+
+ .input-group-append .btn{
+    color: white !important;
+ }
+
+ .custom-file-input ~ .custom-file-label::after {
+    content: "Elegir";
+    background-color: #4e37a5 !important;
+    border-color: #4e37a5 !important;
+    color: white !important;
+}
